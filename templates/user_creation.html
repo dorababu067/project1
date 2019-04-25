@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h3 style="color:white">User Registration Form </h3><hr/>
+        <form action="" method="POST" style="color:white">{% csrf_token %}
+            {{ form.as_p }}
+        
+        <input type="submit" value="Register" class="btn btn-success" />
+        </form>
+    </div>
+<div class="col-md-4"></div>
+{% endblock %}

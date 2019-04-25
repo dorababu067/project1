@@ -1,0 +1,71 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<style>
+body{
+    background-image: url("{% static 'img/back1.jpg' %}");
+    background-repeat: repeat-x;
+    color: white;
+
+}
+#login-form{
+    padding-top: 0px;
+
+}
+#avatar{
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50%; */
+}
+</style>
+</head>
+<body>
+<!-- nav bar -->
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="color:black">WebSiteName</a>
+          </div>
+          <ul class="nav navbar-nav  navbar-right" style="padding-right:100px">
+            <li><a href="/reg/" style="color:black">Register</a></li>
+          </ul>
+        </div>
+    </nav>
+    
+<!-- login form -->
+    <div class="container">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <fieldset>
+                <legend style="text-align:center;color: white">Login</legend>
+                <img src="{% static 'img/avatar.jpg' %}" alt="avatar" id="avatar" class="center">
+                <form id="login-form" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <label for="use">Username:</label>
+                        <input type="text" class="form-control" name="user" placeholder="Username" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" name="pwd" placeholder="Enter password">
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-success" >Submit</button>
+                </form>
+
+            </fieldset>
+        </div>
+        </div>
+        <div class="div-md-4"></div>
+</body>
+</html>

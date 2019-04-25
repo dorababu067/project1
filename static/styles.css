@@ -1,0 +1,7 @@
+#content{
+    /* background-color: rgb(216, 213, 213); */
+    height: 600px;
+    padding: 10px;
+    font-size: 12px;
+    /* background-image:url('{{ STATIC_URL }}img/background.jpg'); */
+}

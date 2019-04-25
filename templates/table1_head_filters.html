@@ -1,0 +1,47 @@
+<form  method="POST" action="/tab1/">{% csrf_token %}
+        <button type="submit" class="btn btn-success btn-xs" >submit</button>
+        <select id="serch" name='department'>
+            {% if dept %}
+                <option selected value="{{dept}}">{{dept}}</option>
+            {% endif %}
+            <option value="HR" >HR</option>
+            <option  value="OP">OP</option>
+            <option  value="AD">AD</option>
+        </select>
+        <select id="serch1" name='nlarge'>
+            {% if nlarge %}
+                <option selected value="{{ nlarge }}">{{ nlarge }} large</option>
+            {% endif %}
+            <option value="1">1 large</option>
+            <option value='2'>2 large</option>
+            <option value='3'>3 large</option>
+            <option value='4'>4 large</option>
+            <option value='5'>5 large</option>
+            <option value='6'>6 large</option>
+            <option value='7'>7 large</option>
+            <option value='8'>8 large</option>
+            <option value='9'>9 large</option>
+            <option value='10'>10 lage</option>
+        </select>
+        <select id="serch2" name='nsmall'>
+            {% if nsmall %}
+                <option selected value="{{ nsmall }}">{{ nsmall }} small</option>
+            {% endif %}    
+            <option value="1">1 small</option>
+            <option value="2">2 small</option>
+            <option value="3">3 small</option>
+            <option value="4">4 small</option>
+            <option value="5">5 small</option>
+            <option value="6">6 small</option>
+            <option value="7">7 small</option>
+            <option value="8">8 small</option>
+            <option value="9">9 small</option>
+            <option value="10">10 large</option>
+        </select>          
+</form>
+
+
+    
+       
+
+    

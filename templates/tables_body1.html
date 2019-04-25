@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="row">
+    <!-- first table -->
+        <div class="col-md-6">
+            {% include "table1_head_filters.html" %}
+            <br/>
+            <div id="example-table1">
+                {{ data|json_script:"foobar" }}
+            </div>
+        </div>
+    <!-- second table -->
+        <div class="col-md-6">
+            {% include "table2_head_filters.html" %}
+            <br/>
+            <div id="example-table2">
+                {{ static_data|json_script:"foobar1"}}
+            </div>
+        </div>
+</div>
+    
+    {% block scripts %}
+    <script>
+      var value = JSON.parse(document.getElementById('foobar').textContent);
+      var value1 = JSON.parse(document.getElementById('foobar1').textContent);
+    //   console.log(value)
+    //   console.log(value1)
+        //table1 - data
+        var table = new Tabulator("#example-table1", {
+            data:value, //set initial table data
+            layout:"fitColumns",
+            font:10,
+            // layout:"fitDataFill",
+            columns:[
+                {title:"Manager", field:"manager",cssClass:"blue-background"},
+                {title:"Team", field:"team"},
+                {title:"FirstObjs", field:"first"},
+                {title:"LastObjs", field:"last"},
+                {title:"Largest", field:"large"},
+                {title:"nLarge", field:"nlarge"},
+                {title:"Small", field:"small"},
+                {title:"nSmall", field:"nsmall"},
+                {title:"Sum", field:"sum"},
+            ],
+        });
+
+    // table2 - data
+    var table = new Tabulator("#example-table2", {
+            data:value1, //set initial table data
+            layout:"fitColumns",
+            columns:[
+                {title:"Manager", field:"manager"},
+                {title:"Team", field:"team"},
+                {title:"FirstObjs", field:"first"},
+                {title:"LastObjs", field:"last"},
+                {title:"Largest", field:"large"},
+                {title:"nLarge", field:"nlarge"},
+                {title:"Small", field:"small"},
+                {title:"nSmall", field:"nsmall"},
+                {title:"Sum", field:"sum"},
+            ],
+        });
+    </script>
+    {% endblock %}
+
+{% endblock %}

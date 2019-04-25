@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="row">
+    <!-- first table body -->
+    <div class="col-md-6">
+        {% include "table1_head_filters.html" %}
+        <br/>
+        {% include "table1_head.html" %}
+        <tbody id="tab1_body">  
+            {% for manager,team,first,last,max,min,sum in departments %}
+            <tr>
+                <td>{{ manager }}</td>
+                <td>{{ team }}</td>
+                <td>{{ first}}</td>
+                <td>{{ last }}</td>
+                <td>{{ max }}</td>
+                <td>{{ max }}</td>
+                <td>{{ min }}</td>
+                <td>{{ min }}</td>
+                <td>{{ sum}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+
+    <!-- second table body -->
+    <div class="col-md-6">
+        {% include "table2_head_filters.html" %}
+        <br/>
+        {% include "table2_head.html" %}
+        <tbody id="tab2_body">
+            {% for manager,team,first,last,max,min,sum in departments1 %}
+            <tr>
+                <td>{{ manager }}</td>
+                <td>{{ team }}</td>
+                <td>{{ first}}</td>
+                <td>{{ last }}</td>
+                <td>{{ max }}</td>
+                <td>{{ max }}</td>
+                <td>{{ min }}</td>
+                <td>{{ min }}</td>
+                <td>{{ sum}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+</div>     
+{% endblock %}
